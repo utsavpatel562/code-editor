@@ -3,16 +3,12 @@
 @tailwind utilities;
 
 :root {
+  /* This forces the variables to stay light */
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* REMOVE THE ENTIRE @media (prefers-color-scheme: dark) BLOCK HERE */
 
 body {
   color: var(--foreground);
