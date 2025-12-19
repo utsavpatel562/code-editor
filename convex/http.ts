@@ -2,6 +2,7 @@ import { httpRouter } from "convex/server";
 import {httpAction} from "./_generated/server";
 import { Webhook } from "svix";
 import {WebhookEvent} from "@clerk/nextjs/server";
+import {api, internal} from "./_generated/api";
 
 const http = httpRouter();
 
@@ -50,7 +51,13 @@ http.route({
 
             try {
                 // save the user
+                await ctx.runMutation(api.users.syncUser, {
+                    userId: id,
+                    email,
+                    name,
+                })
             } catch (error) {
+                console.log("Error creating user:", error);
                 return new Response("Error creating user", {status: 500});
             }
         }
