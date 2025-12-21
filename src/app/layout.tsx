@@ -2,10 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import ConvexClientProvider from "@/components/providers/ConvexClientProvider";
+import { Geist, Geist_Mono } from "next/font/google";
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 
 export const metadata: Metadata = {
   title: "CodeEditor",
-  description: "Your Codebase - everything in same place.",
+  description: "Your Codebase - everything in one place.",
 };
 
 export default function RootLayout({
@@ -14,13 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // Explicitly set light mode on the HTML tag
-    <ClerkProvider>
-      <html lang="en" className="light" style={{ colorScheme: "light" }}>
-        <body className="bg-white text-black antialiased">
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-gray-100 flex flex-col`}
+      >
+        <ClerkProvider>
           <ConvexClientProvider>{children}</ConvexClientProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
