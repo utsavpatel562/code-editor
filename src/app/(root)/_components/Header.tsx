@@ -20,7 +20,7 @@ async function Header() {
   return (
     <div className="relative z-10">
       <div
-        className="flex items-center lg:justify-between justify-center 
+        className="flex border border-gray-800 items-center lg:justify-between justify-center 
         bg-[#0a0a0f]/80 backdrop-blur-xl p-6 mb-4 rounded-lg"
       >
         <div className="hidden lg:flex items-center gap-8">
@@ -45,7 +45,7 @@ async function Header() {
                 CodeEditor
               </span>
               <span className="block text-xs text-blue-400/60 font-medium">
-                Interactive Code Editor
+                Where Code Comes Alive
               </span>
             </div>
           </Link>
