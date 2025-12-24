@@ -1,12 +1,12 @@
 # Code Editor 💻
 
-<img src="public/demo_pic.png" alt="Preview Image"/>
+<img src="public/image.png" alt="Preview Image"/>
 
 Welcome to the **Full Stack Code Editor** project!  
 This is a modern, high-performance web-based code editor built using a cutting-edge full stack.  
 The app focuses on clean UI, smooth animations, scalability, and a great developer experience.
 
-🌐 Live Demo: https://your-project-url.vercel.app
+🌐 Live Demo: https://codee-editorr-pro.vercel.app
 
 ## 🚀 Features
 
